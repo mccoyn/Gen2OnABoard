@@ -47,6 +47,10 @@ public:
    void disableStep();
    
    void shutdown();
+
+   float stepsPerMM(){return E0_STEPS_PER_MM;}
+   int getBedTemperature(){return 0;}
+   void setBedTemperature(int temp){}
    
 private:
 
