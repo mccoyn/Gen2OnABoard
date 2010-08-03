@@ -23,6 +23,11 @@
 
 #define MOTHERBOARD 1
 
+// Comment out the next line if you are running a Darwin
+
+#define MENDEL 1
+#define SLOTTED_PULLEYS 1
+
 //*********************************************************************************************
 
 // These settings are mainly for Darwin
@@ -50,10 +55,6 @@
 // These settings are mainly for Mendel
 
 #else
-
-// Comment out the next line if you are running a Darwin with a MOTHERBOARD > 1
-
-#define MENDEL 1
 
 // Set to 1 if enable pins are inverting
 // For RepRap stepper boards version 1.x the enable pins are *not* inverting.
