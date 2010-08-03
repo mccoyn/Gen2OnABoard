@@ -118,9 +118,8 @@ inline void extruder::setDirection(bool dir)
 
 inline void extruder::setCooler(byte sp)
 {
-  if(step_en_pin >= 0) // Step enable conflicts with the fan
-    return;
-  analogWrite(fan_pin, sp);
+  if (  (fan_pin >= 0) && (fan_pin < 128)  )
+    analogWrite(fan_pin, sp);
 }
 
 /**********************************************************************************************

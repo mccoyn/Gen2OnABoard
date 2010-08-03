@@ -30,11 +30,11 @@
 #define EXTRUDER_0_MOTOR_SPEED_PIN  (byte)11
 #define EXTRUDER_0_MOTOR_DIR_PIN    (byte)12
 #define EXTRUDER_0_HEATER_PIN       (byte)6
-#define EXTRUDER_0_FAN_PIN          (byte)5
+#define EXTRUDER_0_FAN_PIN          (byte)-1 // 5 - conflicts with step enable; set -1 if no fan
 #define EXTRUDER_0_TEMPERATURE_PIN  (byte)0  // Analogue input
-#define EXTRUDER_0_VALVE_DIR_PIN             (byte)16       //NB: Conflicts with Max Z!!!!
-#define EXTRUDER_0_VALVE_ENABLE_PIN          (byte)15 
-#define EXTRUDER_0_STEP_ENABLE_PIN  5 // 5 - NB conflicts with the fan; set -ve if no stepper
+#define EXTRUDER_0_VALVE_DIR_PIN             (byte)-1 // 16 - Conflicts with Max Z!!!!
+#define EXTRUDER_0_VALVE_ENABLE_PIN          (byte)-1 // 15 
+#define EXTRUDER_0_STEP_ENABLE_PIN  5 // 5 - conflicts with the fan; set -1 if no stepper
 
 
 /****************************************************************************************
