@@ -239,9 +239,9 @@ int extruder::getTemperature()
       break;
     }
   }
-
-  // Overflow: Set to last value in the table
-  if (i == NUMTEMPS) celsius = temptable[i-1][1];
+  
+  // Overflow: Set to fail safe value
+  if (i == NUMTEMPS) celsius = temptable[0][1];
   // Clamp to byte
   if (celsius > 255) celsius = 255; 
   else if (celsius < 0) celsius = 0; 
