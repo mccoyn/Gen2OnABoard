@@ -245,7 +245,11 @@ inline bool qEmpty()
 
 inline void qMove(const FloatPoint& p)
 {
-  while(qFull()) delay(WAITING_DELAY);
+  while(qFull())
+  {
+    manageAllExtruders();
+    delay(WAITING_DELAY);
+  }
   byte h = head; 
   h++;
   if(h >= BUFFER_SIZE)
