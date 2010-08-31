@@ -185,7 +185,15 @@ void cartesian_dda::set_target(const FloatPoint& p)
         dda_counter.e = dda_counter.x;
         dda_counter.f = dda_counter.x;
   
-        where_i_am = p;
+        //how far did we actually move?
+        delta_position = to_world(units, delta_steps);
+  
+        //calculate our new position after the move
+        where_i_am.x += delta_position.x * (x_direction ? 1 : -1);
+        where_i_am.y += delta_position.y * (y_direction ? 1 : -1);
+        where_i_am.z += delta_position.z * (z_direction ? 1 : -1);
+        where_i_am.e += delta_position.e * (e_direction ? 1 : -1);
+        where_i_am.f = p.f;
 
         //sprintf(debugstring, "%d %d %d", (int)current_steps.e, (int)target_steps.e, (int)delta_steps.e);
         
